@@ -1,0 +1,43 @@
+{{define "content"}}
+<div class="container">
+    <a href="/components">&larr; Back to Components</a>
+    <h1>Input</h1>
+    <p>Styled text input field.</p>
+
+    <h2>Example</h2>
+    <div class="preview-box">
+        <go-input placeholder="Enter text..."></go-input>
+        <br>
+        <go-input type="password" placeholder="Password"></go-input>
+    </div>
+
+    <h2>Usage</h2>
+    <pre><code>&lt;go-input placeholder="Name"&gt;&lt;/go-input&gt;</code></pre>
+
+    <h2>API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>type</td>
+                <td>string</td>
+                <td>text</td>
+                <td>Input type (text, password, etc)</td>
+            </tr>
+            <tr>
+                <td>placeholder</td>
+                <td>string</td>
+                <td>-</td>
+                <td>Placeholder text</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{end}}

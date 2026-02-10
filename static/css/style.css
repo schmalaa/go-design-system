@@ -64,6 +64,64 @@ h6 {
   line-height: 1.2;
 }
 
+/* Code Blocks */
+pre {
+  background-color: #1e293b;
+  /* Slate 800 */
+  color: #e2e8f0;
+  /* Slate 200 */
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  /* Optional: if you want a coding font */
+  border: 1px solid #334155;
+  margin-bottom: var(--spacing-lg);
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+/* API Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-lg) 0;
+  font-size: 0.95rem;
+}
+
+th {
+  text-align: left;
+  padding: var(--spacing-md);
+  border-bottom: 2px solid #e2e8f0;
+  color: var(--text-primary);
+  font-weight: 600;
+  background-color: #f8fafc;
+}
+
+td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid #e2e8f0;
+  color: var(--text-secondary);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* Inline code styling (not inside pre) */
+p>code,
+li>code {
+  background-color: #f1f5f9;
+  color: var(--primary-color);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
 a {
   color: var(--primary-color);
   text-decoration: none;

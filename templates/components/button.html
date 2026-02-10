@@ -1,0 +1,43 @@
+{{define "content"}}
+<div class="container">
+    <a href="/components">&larr; Back to Components</a>
+    <h1>Button</h1>
+    <p>Trigger actions or navigation.</p>
+
+    <h2>Example</h2>
+    <div class="preview-box">
+        <go-button variant="primary">Primary</go-button>
+        <go-button variant="secondary">Secondary</go-button>
+        <go-button disabled>Disabled</go-button>
+    </div>
+
+    <h2>Usage</h2>
+    <pre><code>&lt;go-button variant="primary"&gt;Click Me&lt;/go-button&gt;</code></pre>
+
+    <h2>API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>variant</td>
+                <td>string</td>
+                <td>primary</td>
+                <td>Visual style: 'primary' or 'secondary'</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>Disables interaction</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{end}}

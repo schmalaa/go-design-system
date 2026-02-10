@@ -1,0 +1,36 @@
+{{define "content"}}
+<div class="container">
+    <a href="/components">&larr; Back to Components</a>
+    <h1>Badge</h1>
+    <p>Small status indicator.</p>
+
+    <h2>Example</h2>
+    <div class="preview-box">
+        <go-badge variant="primary">New</go-badge>
+        <go-badge variant="secondary">Beta</go-badge>
+    </div>
+
+    <h2>Usage</h2>
+    <pre><code>&lt;go-badge variant="primary"&gt;New&lt;/go-badge&gt;</code></pre>
+
+    <h2>API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>variant</td>
+                <td>string</td>
+                <td>primary</td>
+                <td>Visual style: 'primary' or 'secondary'</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{end}}

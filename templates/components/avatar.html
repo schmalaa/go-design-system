@@ -1,0 +1,50 @@
+{{define "content"}}
+<div class="container">
+    <a href="/components">&larr; Back to Components</a>
+    <h1>Avatar</h1>
+    <p>User profile image or initials.</p>
+
+    <h2>Example</h2>
+    <div class="preview-box">
+        <go-avatar src="https://via.placeholder.com/150" alt="User" size="sm"></go-avatar>
+        <go-avatar src="https://via.placeholder.com/150" alt="User" size="md"></go-avatar>
+        <go-avatar src="https://via.placeholder.com/150" alt="User" size="lg"></go-avatar>
+        <go-avatar alt="Alex Smith" size="md"></go-avatar>
+    </div>
+
+    <h2>Usage</h2>
+    <pre><code>&lt;go-avatar src="..." alt="User" size="md"&gt;&lt;/go-avatar&gt;</code></pre>
+
+    <h2>API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>src</td>
+                <td>string</td>
+                <td>-</td>
+                <td>Image URL</td>
+            </tr>
+            <tr>
+                <td>alt</td>
+                <td>string</td>
+                <td>-</td>
+                <td>Alt text (used for initials)</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>string</td>
+                <td>md</td>
+                <td>sm, md, lg</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{end}}

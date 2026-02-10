@@ -1,68 +1,120 @@
 {{define "content"}}
 <div class="container">
-    <section>
-        <h2>Buttons</h2>
-        <go-button variant="primary">Primary Button</go-button>
-        <go-button variant="secondary">Secondary Button</go-button>
-        <go-button disabled>Disabled Button</go-button>
-    </section>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h1>Components</h1>
+        <p>Explore the building blocks of the Go Design System.</p>
+    </div>
 
-    <section>
-        <h2>Cards</h2>
-        <go-card>
-            <h3>Card Title</h3>
-            <p>This is a simple card component created with Web Components.</p>
-            <go-button>Action</go-button>
-        </go-card>
-    </section>
-
-    <section>
-        <h2>Inputs</h2>
-        <go-input placeholder="Enter text..."></go-input>
-        <go-input type="password" placeholder="Password"></go-input>
-    </section>
-
-    <section>
-        <h2>Badges</h2>
-        <go-badge variant="primary">New</go-badge>
-        <go-badge variant="secondary">Beta</go-badge>
-    </section>
-
-    <section>
-        <h2>Alerts</h2>
-        <go-alert variant="info">This is an info alert.</go-alert>
-        <go-alert variant="success" dismissible>This is a success alert (dismissible).</go-alert>
-        <go-alert variant="warning">This is a warning alert.</go-alert>
-        <go-alert variant="error">This is an error alert.</go-alert>
-    </section>
-
-    <section>
-        <h2>Avatars</h2>
-        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="sm"></go-avatar>
-        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="md"></go-avatar>
-        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="lg"></go-avatar>
-        <go-avatar alt="Alex Smith" size="md"></go-avatar>
-    </section>
-
-    <section>
-        <h2>Modals</h2>
-        <go-button id="open-modal">Open Modal</go-button>
-        <go-modal id="my-modal">
-            <h2 slot="header">Modal Title</h2>
-            <p>This is the modal content.</p>
-            <div slot="footer">
-                <go-button variant="secondary" id="close-modal">Close</go-button>
-                <go-button variant="primary">Action</go-button>
-            </div>
-        </go-modal>
-        <script>
-            document.getElementById('open-modal').addEventListener('click', () => {
-                document.getElementById('my-modal').setAttribute('open', '');
-            });
-            document.getElementById('close-modal').addEventListener('click', () => {
-                document.getElementById('my-modal').removeAttribute('open');
-            });
-        </script>
-    </section>
+    <div class="components-grid">
+        <a href="/components/button" class="component-link">
+            <go-card>
+                <h3>Button</h3>
+                <p>Trigger actions.</p>
+                <go-button variant="primary" style="pointer-events: none;">Button</go-button>
+            </go-card>
+        </a>
+        <a href="/components/card" class="component-link">
+            <go-card>
+                <h3>Card</h3>
+                <p>Content container.</p>
+            </go-card>
+        </a>
+        <a href="/components/input" class="component-link">
+            <go-card>
+                <h3>Input</h3>
+                <p>Text fields.</p>
+                <go-input placeholder="Input" style="pointer-events: none;"></go-input>
+            </go-card>
+        </a>
+        <a href="/components/badge" class="component-link">
+            <go-card>
+                <h3>Badge</h3>
+                <p>Status indicators.</p>
+                <go-badge variant="primary">New</go-badge>
+            </go-card>
+        </a>
+        <a href="/components/alert" class="component-link">
+            <go-card>
+                <h3>Alert</h3>
+                <p>Feedback banners.</p>
+                <go-alert variant="info" style="pointer-events: none;">Info</go-alert>
+            </go-card>
+        </a>
+        <a href="/components/avatar" class="component-link">
+            <go-card>
+                <h3>Avatar</h3>
+                <p>User images.</p>
+                <go-avatar alt="User" size="md"></go-avatar>
+            </go-card>
+        </a>
+        <a href="/components/modal" class="component-link">
+            <go-card>
+                <h3>Modal</h3>
+                <p>Dialog overlays.</p>
+            </go-card>
+        </a>
+    </div>
 </div>
+
+<style>
+    .components-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 24px;
+        padding-bottom: 40px;
+    }
+
+    .component-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: transform 0.2s;
+    }
+
+    .component-link:hover {
+        transform: translateY(-4px);
+        color: var(--primary-color);
+    }
+
+    /* Simple preview styling helper */
+    .preview-box {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 32px;
+        margin-bottom: 32px;
+        background: #fff;
+    }
+
+    /* Tables for API docs */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 16px;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    td {
+        color: var(--text-secondary);
+    }
+
+    /* Code blocks */
+    pre {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+    }
+</style>
 {{end}}

@@ -19,10 +19,22 @@ func main() {
 		tmplPath := filepath.Join("templates", "layout.html")
 		var contentPath string
 
-		if r.URL.Path == "/components" {
-			contentPath = filepath.Join("templates", "components.html")
-		} else {
+		if r.URL.Path == "/" {
 			contentPath = filepath.Join("templates", "index.html")
+		} else if r.URL.Path == "/components" {
+			contentPath = filepath.Join("templates", "components.html")
+		} else if len(r.URL.Path) > len("/components/") && r.URL.Path[:len("/components/")] == "/components/" {
+			compName := r.URL.Path[len("/components/"):]
+			contentPath = filepath.Join("templates", "components", compName+".html")
+		} else {
+			http.NotFound(w, r)
+			return
+		}
+
+		// check if file exists
+		if _, err := os.Stat(contentPath); os.IsNotExist(err) {
+			http.NotFound(w, r)
+			return
 		}
 
 		tmpl, err := template.ParseFiles(tmplPath, contentPath)

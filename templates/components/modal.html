@@ -1,0 +1,49 @@
+{{define "content"}}
+<div class="container">
+    <a href="/components">&larr; Back to Components</a>
+    <h1>Modal</h1>
+    <p>Dialog overlay.</p>
+
+    <h2>Example</h2>
+    <div class="preview-box">
+        <go-button id="open-btn">Open Modal</go-button>
+        <go-modal id="example-modal">
+            <h2 slot="header">Example Modal</h2>
+            <p>This is the modal body content.</p>
+            <div slot="footer">
+                <go-button variant="secondary" id="close-btn">Close</go-button>
+            </div>
+        </go-modal>
+        <script>
+            document.getElementById('open-btn').addEventListener('click', () => {
+                document.getElementById('example-modal').setAttribute('open', '');
+            });
+            document.getElementById('close-btn').addEventListener('click', () => {
+                document.getElementById('example-modal').removeAttribute('open');
+            });
+        </script>
+    </div>
+
+    <h2>Usage</h2>
+    <pre><code>&lt;go-modal id="modal"&gt;
+  &lt;h2 slot="header"&gt;Title&lt;/h2&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/go-modal&gt;</code></pre>
+
+    <h2>API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>open</td>
+                <td>Visibility state</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{end}}

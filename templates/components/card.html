@@ -1,0 +1,38 @@
+{{define "content"}}
+<div class="container">
+    <a href="/components">&larr; Back to Components</a>
+    <h1>Card</h1>
+    <p>A container for content with shadow and rounded corners.</p>
+
+    <h2>Example</h2>
+    <div class="preview-box">
+        <go-card>
+            <h3>Card Title</h3>
+            <p>Some sample content inside the card.</p>
+            <go-button>Action</go-button>
+        </go-card>
+    </div>
+
+    <h2>Usage</h2>
+    <pre><code>&lt;go-card&gt;
+  &lt;h3&gt;Title&lt;/h3&gt;
+  &lt;p&gt;Content...&lt;/p&gt;
+&lt;/go-card&gt;</code></pre>
+
+    <h2>API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Slot</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>(default)</td>
+                <td>The content of the card.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{end}}
