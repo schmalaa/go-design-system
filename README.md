@@ -1,0 +1,67 @@
+# Go Design System
+
+A lightweight, Go-based web application that serves a custom design system built with vanilla Web Components.
+
+## Features
+
+- **Go Backend**: Simple HTTP server using `net/http` and `html/template`.
+- **Web Components**: Custom reusable HTML elements:
+  - `<go-button>`: Buttons with primary/secondary variants.
+  - `<go-card>`: Container for content with shadow and rounded corners.
+  - `<go-input>`: Styled input fields.
+  - `<go-badge>`: Status badges.
+- **Static Assets**: Serves CSS and JS from the `static/` directory.
+
+## Project Structure
+
+```
+├── main.go                 # Server entry point
+├── go.mod                  # Go module definition
+├── static/
+│   ├── css/style.css       # Global styles
+│   └── js/components.js    # Web Component definitions
+└── templates/
+    ├── index.html          # Main page
+    └── layout.html         # Base layout template
+```
+
+## Getting Started
+
+### Prerequisites
+
+- [Go](https://golang.org/dl/) (1.18 or later recommended)
+
+### Running the Application
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/schmalaa/go-design-system.git
+   cd go-design-system
+   ```
+
+2. Run the server:
+   ```bash
+   go run main.go
+   ```
+
+3. Open your browser and navigate to:
+   ```
+   http://localhost:8080
+   ```
+
+## Usage
+
+Use the custom components in your HTML:
+
+```html
+<go-button variant="primary">Click Me</go-button>
+
+<go-card>
+  <h3>Card Title</h3>
+  <p>Card content goes here.</p>
+</go-card>
+
+<go-input placeholder="Enter text..."></go-input>
+
+<go-badge variant="secondary">New</go-badge>
+```
