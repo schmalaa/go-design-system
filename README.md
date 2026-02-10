@@ -7,6 +7,12 @@ A lightweight, Go-based web application that serves a custom design system built
 - **Go Backend**: Simple HTTP server using `net/http` and `html/template`.
 - **Web Components**: Custom reusable HTML elements with encapsulated styles (Shadow DOM).
 - **Modern Design**: Clean, responsive UI with a fresh color palette and typography.
+- **Badge**: Status indicators (success, warning, error, neutral).
+- **Alert**: Contextual feedback messages.
+- **Avatar**: User profile images with fallback initials.
+- **Modal**: Accessible dialog windows.
+- **Icon**: Wrapper for [Phosphor Icons](https://phosphoricons.com/).
+- **Theme Toggle**: Sidebar component for switching between Light and Dark modes.
 - **No Dependencies**: Built with standard web technologies.
 
 ## Component API
