@@ -26,23 +26,21 @@
 
 <body>
     <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
-                <go-icon name="hexagon" weight="duotone" size="32px" style="color: var(--primary-color);"></go-icon>
-                <div style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">
-                    Go<span style="color: var(--primary-color);">DS</span>
+        <div class="container header-container">
+            <a href="/" class="logo-link">
+                <go-icon name="hexagon" weight="duotone" size="32px" class="logo-icon"></go-icon>
+                <div class="logo-text">
+                    Go<span class="logo-accent">DS</span>
                 </div>
             </a>
-            <nav style="display: flex; align-items: center; gap: 20px;">
-                <a href="/" style="text-decoration: none; color: inherit; font-weight: bold;">Home</a>
-                <a href="/components" style="text-decoration: none; color: inherit; font-weight: bold;">Components</a>
-                <a href="https://github.com/schmalaa/go-design-system" target="_blank"
-                    style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 6px;">
+            <nav class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/components" class="nav-link">Components</a>
+                <a href="https://github.com/schmalaa/go-design-system" target="_blank" class="nav-link-icon">
                     <go-icon name="github-logo" size="lg"></go-icon>
                     GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/alex-schmaltz-12127139/" target="_blank"
-                    style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 6px;">
+                <a href="https://www.linkedin.com/in/alex-schmaltz-12127139/" target="_blank" class="nav-link-icon">
                     <go-icon name="linkedin-logo" size="lg"></go-icon>
                     LinkedIn
                 </a>
@@ -54,16 +52,14 @@
     <div class="container main-wrapper {{if .ShowSidebar}}has-sidebar{{end}}">
         {{if .ShowSidebar}}
         <aside class="sidebar">
-            <h3
-                style="margin-top: 0; margin-bottom: 16px; font-size: 1rem; text-transform: uppercase; color: var(--text-primary);">
+            <h3 class="sidebar-title">
                 Components</h3>
             <ul>
                 {{$currentPath := .ActivePath}}
                 {{range .MenuItems}}
                 <li>
                     <a href="{{.Path}}" class="{{if eq $currentPath .Path}}active{{end}}">
-                        <go-icon name="{{.Icon}}" size="lg"
-                            style="margin-right: 8px; vertical-align: middle;"></go-icon>
+                        <go-icon name="{{.Icon}}" size="lg" class="sidebar-icon"></go-icon>
                         {{.Label}}
                     </a>
                 </li>

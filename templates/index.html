@@ -1,6 +1,6 @@
 {{define "content"}}
 <div class="hero-section">
-    <div class="container" style="text-align: center;">
+    <div class="container text-center">
         <h1 class="hero-title">Build Beautiful Go Apps <br>With <span class="gradient-text">Web Components</span></h1>
         <p class="hero-subtitle">
             A lightweight, dependency-free design system.
@@ -10,14 +10,13 @@
             <a href="/components">
                 <go-button variant="primary">
                     Browse Components
-                    <go-icon name="arrow-right" weight="bold"
-                        style="margin-left: 8px; vertical-align: middle;"></go-icon>
+                    <go-icon name="arrow-right" weight="bold" class="button-icon-right"></go-icon>
                 </go-button>
             </a>
             <a href="https://github.com/schmalaa/go-design-system" target="_blank">
                 <go-button variant="secondary">
                     View Source
-                    <go-icon name="github-logo" style="margin-left: 8px; vertical-align: middle;"></go-icon>
+                    <go-icon name="github-logo" class="button-icon-right"></go-icon>
                 </go-button>
             </a>
         </div>
@@ -27,20 +26,17 @@
 <div class="container">
     <div class="features-grid">
         <go-card class="feature-card">
-            <h3><go-icon name="lightning" weight="duotone" size="lg"
-                    style="color: var(--primary-color); vertical-align: middle; margin-right: 8px;"></go-icon>
+            <h3><go-icon name="lightning" weight="duotone" size="lg" class="feature-icon"></go-icon>
                 Lightweight</h3>
             <p>Zero dependencies. Just Vanilla JS and CSS. Keeps your bundle size tiny and your app fast.</p>
         </go-card>
         <go-card class="feature-card">
-            <h3><go-icon name="lock-key" weight="duotone" size="lg"
-                    style="color: var(--primary-color); vertical-align: middle; margin-right: 8px;"></go-icon>
+            <h3><go-icon name="lock-key" weight="duotone" size="lg" class="feature-icon"></go-icon>
                 Encapsulated</h3>
             <p>Built with Shadow DOM to ensure styles are scoped to the component and never leak out.</p>
         </go-card>
         <go-card class="feature-card">
-            <h3><go-icon name="terminal-window" weight="duotone" size="lg"
-                    style="color: var(--primary-color); vertical-align: middle; margin-right: 8px;"></go-icon> Go Ready
+            <h3><go-icon name="terminal-window" weight="duotone" size="lg" class="feature-icon"></go-icon> Go Ready
             </h3>
             <p>Seamless integration with `html/template`. Pass data from your Go backend directly to components.</p>
         </go-card>
@@ -49,9 +45,9 @@
 
 <div class="code-preview-section">
     <div class="container">
-        <div style="text-align: center; margin-bottom: 40px;">
+        <div class="section-intro">
             <h2>Simple to Use</h2>
-            <p style="color: var(--text-secondary);">Just import the script and use the tags.</p>
+            <p class="text-muted">Just import the script and use the tags.</p>
         </div>
         <div class="code-window">
             <pre><code>&lt;!-- In your HTML template --&gt;
