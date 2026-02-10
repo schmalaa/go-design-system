@@ -5,15 +5,115 @@ A lightweight, Go-based web application that serves a custom design system built
 ## Features
 
 - **Go Backend**: Simple HTTP server using `net/http` and `html/template`.
-- **Web Components**: Custom reusable HTML elements:
-  - `<go-button>`: Buttons with primary/secondary variants.
-  - `<go-card>`: Container for content with shadow and rounded corners.
-  - `<go-input>`: Styled input fields.
-  - `<go-badge>`: Status badges.
-  - `<go-alert>`: Info/Success/Warning/Error alerts.
-  - `<go-avatar>`: User avatars with image or initials.
-  - `<go-modal>`: Accessible modal dialogs.
-- **Static Assets**: Serves CSS and JS from the `static/` directory.
+- **Web Components**: Custom reusable HTML elements with encapsulated styles (Shadow DOM).
+- **No Dependencies**: Built with standard web technologies.
+
+## Component API
+
+### `<go-button>`
+
+A clickable button element.
+
+| Attribute | Type   | Default   | Description |
+|-----------|--------|-----------|-------------|
+| `variant` | string | `primary` | Visual style: `primary`, `secondary`. |
+| `disabled`| boolean| `false`   | Disables the button interactivity. |
+
+```html
+<go-button variant="primary">Click Me</go-button>
+```
+
+### `<go-card>`
+
+A container for content.
+
+| Slot | Description |
+|------|-------------|
+| (default) | Main content of the card. |
+
+```html
+<go-card>
+  <h3>Title</h3>
+  <p>Content</p>
+</go-card>
+```
+
+### `<go-input>`
+
+A styled text input.
+
+| Attribute | Type   | Default | Description |
+|-----------|--------|---------|-------------|
+| `type`    | string | `text`  | Input type (e.g., `text`, `password`, `email`). |
+| `placeholder` | string | - | Placeholder text. |
+
+```html
+<go-input placeholder="Enter name"></go-input>
+```
+
+### `<go-badge>`
+
+A small status indicator.
+
+| Attribute | Type   | Default   | Description |
+|-----------|--------|-----------|-------------|
+| `variant` | string | `primary` | Visual style: `primary`, `secondary`. |
+
+```html
+<go-badge variant="secondary">New</go-badge>
+```
+
+### `<go-alert>`
+
+A banner for feedback messages.
+
+| Attribute | Type   | Default | Description |
+|-----------|--------|---------|-------------|
+| `variant` | string | `info`  | Visual style: `info`, `success`, `warning`, `error`. |
+| `dismissible` | boolean | `false` | Adds a close button to remove the alert. |
+
+```html
+<go-alert variant="success" dismissible>Saved!</go-alert>
+```
+
+### `<go-avatar>`
+
+A user profile image.
+
+| Attribute | Type   | Default | Description |
+|-----------|--------|---------|-------------|
+| `src`     | string | -       | URL of the image. |
+| `alt`     | string | -       | Alt text. Used for initials fallback if image fails. |
+| `size`    | string | `md`    | Size: `sm` (24px), `md` (40px), `lg` (64px). |
+
+```html
+<go-avatar src="user.png" alt="User Name"></go-avatar>
+```
+
+### `<go-modal>`
+
+A modal dialog.
+
+| Attribute | Type | Description |
+|-----------|------|-------------|
+| `open`    | boolean | Whether the modal is visible. |
+
+| Slot | Description |
+|------|-------------|
+| `header` | Content for the modal header (e.g., title). |
+| (default) | Main body content. |
+| `footer` | Content for the modal footer (e.g., action buttons). |
+
+**Methods:**
+- `open()`: Opens the modal.
+- `close()`: Closes the modal.
+
+```html
+<go-modal id="my-modal">
+  <h2 slot="header">Title</h2>
+  <p>Body content...</p>
+</go-modal>
+```
 
 ## Project Structure
 
@@ -22,10 +122,13 @@ A lightweight, Go-based web application that serves a custom design system built
 ├── go.mod                  # Go module definition
 ├── static/
 │   ├── components/         # Web Component definitions
-│   │   ├── button/         # Button component (JS + CSS)
-│   │   ├── card/           # Card component (JS + CSS)
-│   │   ├── input/          # Input component (JS + CSS)
-│   │   └── badge/          # Badge component (JS + CSS)
+│   │   ├── button/
+│   │   ├── card/
+│   │   ├── input/
+│   │   ├── badge/
+│   │   ├── alert/
+│   │   ├── avatar/
+│   │   └── modal/
 │   └── css/style.css       # Global styles
 └── templates/
     ├── index.html          # Main page
@@ -34,50 +137,16 @@ A lightweight, Go-based web application that serves a custom design system built
 
 ## Getting Started
 
-### Prerequisites
-
-- [Go](https://golang.org/dl/) (1.18 or later recommended)
-
-### Running the Application
-
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/schmalaa/go-design-system.git
    cd go-design-system
    ```
 
-2. Run the server:
+2. **Run the server:**
    ```bash
    go run main.go
    ```
 
-3. Open your browser and navigate to:
-   ```
-   http://localhost:8080
-   ```
-
-## Usage
-
-Use the custom components in your HTML:
-
-```html
-<go-button variant="primary">Click Me</go-button>
-
-<go-card>
-  <h3>Card Title</h3>
-  <p>Card content goes here.</p>
-</go-card>
-
-<go-input placeholder="Enter text..."></go-input>
-
-<go-badge variant="secondary">New</go-badge>
-
-<go-alert variant="success" dismissible>Action successful!</go-alert>
-
-<go-avatar src="user.jpg" alt="User Name"></go-avatar>
-
-<go-modal id="my-modal">
-  <h2 slot="header">Title</h2>
-  <p>Content</p>
-</go-modal>
-```
+3. **Open browser:**
+   Navigate to `http://localhost:8080`.
