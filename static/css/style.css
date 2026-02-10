@@ -66,6 +66,25 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.05), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.05), transparent 40%);
+  background-attachment: fixed;
+}
+
+/* ... existing styles ... */
+
+
+.sidebar a:hover {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  transform: translateX(4px);
+  transition: all 0.2s ease;
+}
+
+.sidebar a.active {
+  background-color: var(--primary-color);
+  color: var(--on-primary);
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
 }
 
 .container {
@@ -164,12 +183,7 @@ code {
   text-decoration: none;
 }
 
-.sidebar a:hover,
-.sidebar a.active {
-  background-color: rgba(99, 102, 241, 0.1);
-  /* Primary color uniform fade */
-  color: var(--primary-color);
-}
+/* Sidebar link new styles are defined above */
 
 .content-area {
   padding: var(--spacing-lg) 0;
