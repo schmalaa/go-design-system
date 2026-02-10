@@ -14,6 +14,12 @@
     <script type="module" src="/static/components/alert/alert.js"></script>
     <script type="module" src="/static/components/avatar/avatar.js"></script>
     <script type="module" src="/static/components/modal/modal.js"></script>
+    <script type="module" src="/static/components/theme-toggle/theme-toggle.js"></script>
+    <script>
+        // Prevent FOUC
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </head>
 
 <body>
@@ -22,12 +28,12 @@
             <a href="/" style="text-decoration: none; color: inherit;">
                 <h1>Go-DS</h1>
             </a>
-            <nav>
-                <a href="/"
-                    style="margin-right: 20px; text-decoration: none; color: inherit; font-weight: bold;">Home</a>
+            <nav style="display: flex; align-items: center; gap: 20px;">
+                <a href="/" style="text-decoration: none; color: inherit; font-weight: bold;">Home</a>
                 <a href="/components" style="text-decoration: none; color: inherit; font-weight: bold;">Components</a>
                 <a href="https://github.com/schmalaa/go-design-system"
-                    style="margin-left: 20px; text-decoration: none; color: inherit;">GitHub</a>
+                    style="text-decoration: none; color: inherit;">GitHub</a>
+                <go-theme-toggle></go-theme-toggle>
             </nav>
         </div>
     </header>

@@ -37,6 +37,28 @@
   --spacing-xxl: 64px;
 }
 
+[data-theme="dark"] {
+  --background-color: #0f172a;
+  /* Slate 900 */
+  --surface-color: #1e293b;
+  /* Slate 800 */
+  --text-primary: #f1f5f9;
+  /* Slate 100 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+
+  --primary-color: #818cf8;
+  /* Indigo 400 */
+  --primary-variant: #6366f1;
+  /* Indigo 500 */
+
+  --on-primary: #0f172a;
+
+  /* Update specific component styles for dark mode if needed via vars */
+  --border-color: #334155;
+  /* Slate 700 */
+}
+
 body {
   font-family: var(--font-family);
   margin: 0;
