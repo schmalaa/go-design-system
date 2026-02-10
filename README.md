@@ -18,8 +18,12 @@ A lightweight, Go-based web application that serves a custom design system built
 ├── main.go                 # Server entry point
 ├── go.mod                  # Go module definition
 ├── static/
-│   ├── css/style.css       # Global styles
-│   └── js/components.js    # Web Component definitions
+│   ├── components/         # Web Component definitions
+│   │   ├── button/         # Button component (JS + CSS)
+│   │   ├── card/           # Card component (JS + CSS)
+│   │   ├── input/          # Input component (JS + CSS)
+│   │   └── badge/          # Badge component (JS + CSS)
+│   └── css/style.css       # Global styles
 └── templates/
     ├── index.html          # Main page
     └── layout.html         # Base layout template
