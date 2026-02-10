@@ -6,6 +6,7 @@ A lightweight, Go-based web application that serves a custom design system built
 
 - **Go Backend**: Simple HTTP server using `net/http` and `html/template`.
 - **Web Components**: Custom reusable HTML elements with encapsulated styles (Shadow DOM).
+- **Modern Design**: Clean, responsive UI with a fresh color palette and typography.
 - **No Dependencies**: Built with standard web technologies.
 
 ## Component API
@@ -131,7 +132,8 @@ A modal dialog.
 │   │   └── modal/
 │   └── css/style.css       # Global styles
 └── templates/
-    ├── index.html          # Main page
+    ├── components.html     # Component showcase
+    ├── index.html          # Landing page
     └── layout.html         # Base layout template
 ```
 
@@ -149,4 +151,4 @@ A modal dialog.
    ```
 
 3. **Open browser:**
-   Navigate to `http://localhost:8080`.
+   Navigate to `http://localhost:8080` to see the landing page, or `http://localhost:8080/components` for the component library.
