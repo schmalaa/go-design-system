@@ -17,9 +17,15 @@ func main() {
 	// Serve templates
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmplPath := filepath.Join("templates", "layout.html")
-		indexPath := filepath.Join("templates", "index.html")
+		var contentPath string
 
-		tmpl, err := template.ParseFiles(tmplPath, indexPath)
+		if r.URL.Path == "/components" {
+			contentPath = filepath.Join("templates", "components.html")
+		} else {
+			contentPath = filepath.Join("templates", "index.html")
+		}
+
+		tmpl, err := template.ParseFiles(tmplPath, contentPath)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return

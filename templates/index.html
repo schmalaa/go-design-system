@@ -1,68 +1,127 @@
 {{define "content"}}
-<div class="container">
-    <section>
-        <h2>Buttons</h2>
-        <go-button variant="primary">Primary Button</go-button>
-        <go-button variant="secondary">Secondary Button</go-button>
-        <go-button disabled>Disabled Button</go-button>
-    </section>
-
-    <section>
-        <h2>Cards</h2>
-        <go-card>
-            <h3>Card Title</h3>
-            <p>This is a simple card component created with Web Components.</p>
-            <go-button>Action</go-button>
-        </go-card>
-    </section>
-
-    <section>
-        <h2>Inputs</h2>
-        <go-input placeholder="Enter text..."></go-input>
-        <go-input type="password" placeholder="Password"></go-input>
-    </section>
-
-    <section>
-        <h2>Badges</h2>
-        <go-badge variant="primary">New</go-badge>
-        <go-badge variant="secondary">Beta</go-badge>
-    </section>
-
-    <section>
-        <h2>Alerts</h2>
-        <go-alert variant="info">This is an info alert.</go-alert>
-        <go-alert variant="success" dismissible>This is a success alert (dismissible).</go-alert>
-        <go-alert variant="warning">This is a warning alert.</go-alert>
-        <go-alert variant="error">This is an error alert.</go-alert>
-    </section>
-
-    <section>
-        <h2>Avatars</h2>
-        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="sm"></go-avatar>
-        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="md"></go-avatar>
-        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="lg"></go-avatar>
-        <go-avatar alt="Alex Smith" size="md"></go-avatar>
-    </section>
-
-    <section>
-        <h2>Modals</h2>
-        <go-button id="open-modal">Open Modal</go-button>
-        <go-modal id="my-modal">
-            <h2 slot="header">Modal Title</h2>
-            <p>This is the modal content.</p>
-            <div slot="footer">
-                <go-button variant="secondary" id="close-modal">Close</go-button>
-                <go-button variant="primary">Action</go-button>
-            </div>
-        </go-modal>
-        <script>
-            document.getElementById('open-modal').addEventListener('click', () => {
-                document.getElementById('my-modal').setAttribute('open', '');
-            });
-            document.getElementById('close-modal').addEventListener('click', () => {
-                document.getElementById('my-modal').removeAttribute('open');
-            });
-        </script>
-    </section>
+<div class="hero-section">
+    <div class="container" style="text-align: center;">
+        <h1 class="hero-title">Build Beautiful Go Apps <br>With <span class="gradient-text">Web Components</span></h1>
+        <p class="hero-subtitle">
+            A lightweight, dependency-free design system.
+            Standard HTML, CSS, and Go. No build steps required.
+        </p>
+        <div class="hero-actions">
+            <a href="/components">
+                <go-button variant="primary">Browse Components</go-button>
+            </a>
+            <a href="https://github.com/schmalaa/go-design-system" target="_blank">
+                <go-button variant="secondary">View Source</go-button>
+            </a>
+        </div>
+    </div>
 </div>
+
+<div class="container">
+    <div class="features-grid">
+        <go-card class="feature-card">
+            <h3>⚡ Lightweight</h3>
+            <p>Zero dependencies. Just Vanilla JS and CSS. Keeps your bundle size tiny and your app fast.</p>
+        </go-card>
+        <go-card class="feature-card">
+            <h3>🔒 Encapsulated</h3>
+            <p>Built with Shadow DOM to ensure styles are scoped to the component and never leak out.</p>
+        </go-card>
+        <go-card class="feature-card">
+            <h3>🐹 Go Ready</h3>
+            <p>Seamless integration with `html/template`. Pass data from your Go backend directly to components.</p>
+        </go-card>
+    </div>
+</div>
+
+<div class="code-preview-section">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2>Simple to Use</h2>
+            <p style="color: var(--text-secondary);">Just import the script and use the tags.</p>
+        </div>
+        <div class="code-window">
+            <pre><code>&lt;!-- In your HTML template --&gt;
+&lt;go-card&gt;
+  &lt;h3&gt;Hello World&lt;/h3&gt;
+  &lt;go-button variant="primary"&gt;Click Me&lt;/go-button&gt;
+&lt;/go-card&gt;</code></pre>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hero-section {
+        padding: 100px 0 80px;
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        letter-spacing: -0.025em;
+        margin-bottom: 24px;
+    }
+
+    .gradient-text {
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        padding: 80px 0;
+    }
+
+    .feature-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 12px;
+    }
+
+    .feature-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+    }
+
+    .code-preview-section {
+        background-color: #f1f5f9;
+        padding: 80px 0;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .code-window {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: monospace;
+        text-align: left;
+    }
+
+    @media (min-width: 768px) {
+        .hero-title {
+            font-size: 4rem;
+        }
+    }
+</style>
 {{end}}

@@ -1,0 +1,68 @@
+{{define "content"}}
+<div class="container">
+    <section>
+        <h2>Buttons</h2>
+        <go-button variant="primary">Primary Button</go-button>
+        <go-button variant="secondary">Secondary Button</go-button>
+        <go-button disabled>Disabled Button</go-button>
+    </section>
+
+    <section>
+        <h2>Cards</h2>
+        <go-card>
+            <h3>Card Title</h3>
+            <p>This is a simple card component created with Web Components.</p>
+            <go-button>Action</go-button>
+        </go-card>
+    </section>
+
+    <section>
+        <h2>Inputs</h2>
+        <go-input placeholder="Enter text..."></go-input>
+        <go-input type="password" placeholder="Password"></go-input>
+    </section>
+
+    <section>
+        <h2>Badges</h2>
+        <go-badge variant="primary">New</go-badge>
+        <go-badge variant="secondary">Beta</go-badge>
+    </section>
+
+    <section>
+        <h2>Alerts</h2>
+        <go-alert variant="info">This is an info alert.</go-alert>
+        <go-alert variant="success" dismissible>This is a success alert (dismissible).</go-alert>
+        <go-alert variant="warning">This is a warning alert.</go-alert>
+        <go-alert variant="error">This is an error alert.</go-alert>
+    </section>
+
+    <section>
+        <h2>Avatars</h2>
+        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="sm"></go-avatar>
+        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="md"></go-avatar>
+        <go-avatar src="https://via.placeholder.com/150" alt="User Name" size="lg"></go-avatar>
+        <go-avatar alt="Alex Smith" size="md"></go-avatar>
+    </section>
+
+    <section>
+        <h2>Modals</h2>
+        <go-button id="open-modal">Open Modal</go-button>
+        <go-modal id="my-modal">
+            <h2 slot="header">Modal Title</h2>
+            <p>This is the modal content.</p>
+            <div slot="footer">
+                <go-button variant="secondary" id="close-modal">Close</go-button>
+                <go-button variant="primary">Action</go-button>
+            </div>
+        </go-modal>
+        <script>
+            document.getElementById('open-modal').addEventListener('click', () => {
+                document.getElementById('my-modal').setAttribute('open', '');
+            });
+            document.getElementById('close-modal').addEventListener('click', () => {
+                document.getElementById('my-modal').removeAttribute('open');
+            });
+        </script>
+    </section>
+</div>
+{{end}}
