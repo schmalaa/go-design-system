@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go Design System</title>
+    <title>{{.Title}}</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <script type="module" src="/static/components/button/button.js"></script>
     <script type="module" src="/static/components/card/card.js"></script>
@@ -45,20 +45,12 @@
                 style="margin-top: 0; margin-bottom: 16px; font-size: 1rem; text-transform: uppercase; color: var(--text-primary);">
                 Components</h3>
             <ul>
-                <li><a href="/components/alert" class="{{if eq .ActivePath "
-                        /components/alert"}}active{{end}}">Alert</a></li>
-                <li><a href="/components/avatar" class="{{if eq .ActivePath "
-                        /components/avatar"}}active{{end}}">Avatar</a></li>
-                <li><a href="/components/badge" class="{{if eq .ActivePath "
-                        /components/badge"}}active{{end}}">Badge</a></li>
-                <li><a href="/components/button" class="{{if eq .ActivePath "
-                        /components/button"}}active{{end}}">Button</a></li>
-                <li><a href="/components/card" class="{{if eq .ActivePath " /components/card"}}active{{end}}">Card</a>
+                {{$currentPath := .ActivePath}}
+                {{range .MenuItems}}
+                <li>
+                    <a href="{{.Path}}" class="{{if eq $currentPath .Path}}active{{end}}">{{.Label}}</a>
                 </li>
-                <li><a href="/components/input" class="{{if eq .ActivePath "
-                        /components/input"}}active{{end}}">Input</a></li>
-                <li><a href="/components/modal" class="{{if eq .ActivePath "
-                        /components/modal"}}active{{end}}">Modal</a></li>
+                {{end}}
             </ul>
         </aside>
         {{end}}

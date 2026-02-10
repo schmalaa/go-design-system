@@ -16,20 +16,37 @@ func main() {
 
 	// Serve templates
 	// PageData structure for template context
+	type MenuItem struct {
+		Label string
+		Path  string
+	}
+
 	type PageData struct {
 		Title       string
 		ShowSidebar bool
 		ActivePath  string
+		MenuItems   []MenuItem
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmplPath := filepath.Join("templates", "layout.html")
 		var contentPath string
 
+		menuItems := []MenuItem{
+			{Label: "Alert", Path: "/components/alert"},
+			{Label: "Avatar", Path: "/components/avatar"},
+			{Label: "Badge", Path: "/components/badge"},
+			{Label: "Button", Path: "/components/button"},
+			{Label: "Card", Path: "/components/card"},
+			{Label: "Input", Path: "/components/input"},
+			{Label: "Modal", Path: "/components/modal"},
+		}
+
 		data := PageData{
 			Title:       "Go Design System",
 			ShowSidebar: false,
 			ActivePath:  r.URL.Path,
+			MenuItems:   menuItems,
 		}
 
 		if r.URL.Path == "/" {
