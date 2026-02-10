@@ -10,6 +10,9 @@ A lightweight, Go-based web application that serves a custom design system built
   - `<go-card>`: Container for content with shadow and rounded corners.
   - `<go-input>`: Styled input fields.
   - `<go-badge>`: Status badges.
+  - `<go-alert>`: Info/Success/Warning/Error alerts.
+  - `<go-avatar>`: User avatars with image or initials.
+  - `<go-modal>`: Accessible modal dialogs.
 - **Static Assets**: Serves CSS and JS from the `static/` directory.
 
 ## Project Structure
@@ -68,4 +71,13 @@ Use the custom components in your HTML:
 <go-input placeholder="Enter text..."></go-input>
 
 <go-badge variant="secondary">New</go-badge>
+
+<go-alert variant="success" dismissible>Action successful!</go-alert>
+
+<go-avatar src="user.jpg" alt="User Name"></go-avatar>
+
+<go-modal id="my-modal">
+  <h2 slot="header">Title</h2>
+  <p>Content</p>
+</go-modal>
 ```
