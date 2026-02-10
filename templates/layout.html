@@ -37,9 +37,36 @@
             </nav>
         </div>
     </header>
-    <main>
-        {{template "content" .}}
-    </main>
+
+    <div class="container main-wrapper {{if .ShowSidebar}}has-sidebar{{end}}">
+        {{if .ShowSidebar}}
+        <aside class="sidebar">
+            <h3
+                style="margin-top: 0; margin-bottom: 16px; font-size: 1rem; text-transform: uppercase; color: var(--text-primary);">
+                Components</h3>
+            <ul>
+                <li><a href="/components/alert" class="{{if eq .ActivePath "
+                        /components/alert"}}active{{end}}">Alert</a></li>
+                <li><a href="/components/avatar" class="{{if eq .ActivePath "
+                        /components/avatar"}}active{{end}}">Avatar</a></li>
+                <li><a href="/components/badge" class="{{if eq .ActivePath "
+                        /components/badge"}}active{{end}}">Badge</a></li>
+                <li><a href="/components/button" class="{{if eq .ActivePath "
+                        /components/button"}}active{{end}}">Button</a></li>
+                <li><a href="/components/card" class="{{if eq .ActivePath " /components/card"}}active{{end}}">Card</a>
+                </li>
+                <li><a href="/components/input" class="{{if eq .ActivePath "
+                        /components/input"}}active{{end}}">Input</a></li>
+                <li><a href="/components/modal" class="{{if eq .ActivePath "
+                        /components/modal"}}active{{end}}">Modal</a></li>
+            </ul>
+        </aside>
+        {{end}}
+
+        <main class="content-area">
+            {{template "content" .}}
+        </main>
+    </div>
     <footer>
         <div class="container">
             <p>&copy; 2026 Go Design System</p>

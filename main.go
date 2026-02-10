@@ -15,17 +15,32 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// Serve templates
+	// PageData structure for template context
+	type PageData struct {
+		Title       string
+		ShowSidebar bool
+		ActivePath  string
+	}
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmplPath := filepath.Join("templates", "layout.html")
 		var contentPath string
+
+		data := PageData{
+			Title:       "Go Design System",
+			ShowSidebar: false,
+			ActivePath:  r.URL.Path,
+		}
 
 		if r.URL.Path == "/" {
 			contentPath = filepath.Join("templates", "index.html")
 		} else if r.URL.Path == "/components" {
 			contentPath = filepath.Join("templates", "components.html")
+			data.ShowSidebar = true
 		} else if len(r.URL.Path) > len("/components/") && r.URL.Path[:len("/components/")] == "/components/" {
 			compName := r.URL.Path[len("/components/"):]
 			contentPath = filepath.Join("templates", "components", compName+".html")
+			data.ShowSidebar = true
 		} else {
 			http.NotFound(w, r)
 			return
@@ -43,7 +58,7 @@ func main() {
 			return
 		}
 
-		err = tmpl.ExecuteTemplate(w, "layout", nil)
+		err = tmpl.ExecuteTemplate(w, "layout", data)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
