@@ -1,0 +1,30 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Design System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type="module" src="/static/js/components.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Go-DS</h1>
+        </div>
+    </header>
+    <main>
+        {{template "content" .}}
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Go Design System</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+{{end}}

@@ -1,0 +1,31 @@
+{{define "content"}}
+<div class="container">
+    <section>
+        <h2>Buttons</h2>
+        <go-button variant="primary">Primary Button</go-button>
+        <go-button variant="secondary">Secondary Button</go-button>
+        <go-button disabled>Disabled Button</go-button>
+    </section>
+
+    <section>
+        <h2>Cards</h2>
+        <go-card>
+            <h3>Card Title</h3>
+            <p>This is a simple card component created with Web Components.</p>
+            <go-button>Action</go-button>
+        </go-card>
+    </section>
+
+    <section>
+        <h2>Inputs</h2>
+        <go-input placeholder="Enter text..."></go-input>
+        <go-input type="password" placeholder="Password"></go-input>
+    </section>
+
+    <section>
+        <h2>Badges</h2>
+        <go-badge variant="primary">New</go-badge>
+        <go-badge variant="secondary">Updated</go-badge>
+    </section>
+</div>
+{{end}}
