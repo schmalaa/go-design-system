@@ -62,8 +62,8 @@
 <style>
     .hero-section {
         padding: 100px 0 80px;
-        background: linear-gradient(135deg, #f0fdfa 0%, #e0e7ff 50%, #fae8ff 100%);
-        border-bottom: 1px solid #e2e8f0;
+        background: var(--hero-gradient);
+        border-bottom: 1px solid var(--border-color, #e2e8f0);
         position: relative;
         overflow: hidden;
     }
@@ -75,7 +75,7 @@
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+        background: var(--hero-accent-gradient);
         animation: rotate 20s linear infinite;
         z-index: 0;
         pointer-events: none;
@@ -136,9 +136,9 @@
     }
 
     .code-preview-section {
-        background-color: #f1f5f9;
+        background-color: var(--bg-secondary);
         padding: 80px 0;
-        border-top: 1px solid #e2e8f0;
+        border-top: 1px solid var(--border-color, #e2e8f0);
     }
 
     .code-window {

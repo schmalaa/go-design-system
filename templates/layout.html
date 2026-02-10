@@ -19,7 +19,7 @@
     <script type="module" src="/static/components/theme-toggle/theme-toggle.js"></script>
     <script>
         // Prevent FOUC
-        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
     </script>
 </head>

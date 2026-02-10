@@ -20,7 +20,7 @@ class GoThemeToggle extends HTMLElement {
         });
 
         // Initialize icon state
-        const saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const saved = localStorage.getItem('theme') || 'dark';
         this.updateIcon(saved);
 
         // Sync global state immediately (though layout script handles FOUC)

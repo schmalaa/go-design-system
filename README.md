@@ -143,6 +143,8 @@ A modal dialog.
     └── layout.html         # Base layout template
 ```
 
+## Styling Started
+
 ## Getting Started
 
 1. **Clone the repository:**
