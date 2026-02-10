@@ -13,11 +13,18 @@ class GoAlert extends HTMLElement {
         const variant = this.getAttribute('variant') || 'info';
         const dismissible = this.hasAttribute('dismissible');
 
+        // Determine icon based on variant
+        let iconName = 'info';
+        if (variant === 'success') iconName = 'check-circle';
+        if (variant === 'warning') iconName = 'warning';
+        if (variant === 'error') iconName = 'warning-circle';
+
         const container = document.createElement('div');
         container.className = `alert ${variant}`;
         container.innerHTML = `
+            <go-icon name="${iconName}" size="lg" weight="fill" style="margin-right: 12px;"></go-icon>
             <div style="flex-grow: 1;"><slot></slot></div>
-            ${dismissible ? '<button class="close-btn">&times;</button>' : ''}
+            ${dismissible ? '<button class="close-btn"><go-icon name="x" size="md" weight="bold"></go-icon></button>' : ''}
         `;
 
         this.shadowRoot.appendChild(container);

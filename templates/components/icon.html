@@ -1,0 +1,84 @@
+{{define "content"}}
+<div class="container">
+    <a href="/components">&larr; Back to Components</a>
+    <h1>Icon</h1>
+    <p>Displays an icon from the Phosphor Icons library.</p>
+
+    <!-- Interactive Example -->
+    <h2>Example</h2>
+    <div class="preview-box">
+        <go-icon name="heart" size="xl" weight="fill" style="color: #ef4444;"></go-icon>
+        <go-icon name="thumbs-up" size="xl" weight="duotone" style="color: #3b82f6;"></go-icon>
+        <go-icon name="check-circle" size="xl" weight="bold" style="color: #22c55e;"></go-icon>
+    </div>
+
+    <!-- Usage Code -->
+    <h2>Usage</h2>
+    <pre><code>&lt;go-icon name="heart" weight="fill" size="lg"&gt;&lt;/go-icon&gt;</code></pre>
+
+    <!-- Colors & Sizing -->
+    <h2>Sizes & Weights</h2>
+    <div class="preview-box" style="display: flex; gap: 20px; align-items: flex-end;">
+        <div style="text-align: center;">
+            <go-icon name="star" size="sm"></go-icon>
+            <p>sm</p>
+        </div>
+        <div style="text-align: center;">
+            <go-icon name="star" size="md"></go-icon>
+            <p>md</p>
+        </div>
+        <div style="text-align: center;">
+            <go-icon name="star" size="lg"></go-icon>
+            <p>lg</p>
+        </div>
+        <div style="text-align: center;">
+            <go-icon name="star" size="xl"></go-icon>
+            <p>xl</p>
+        </div>
+    </div>
+
+    <div class="preview-box" style="display: flex; gap: 20px; margin-top: 20px;">
+        <go-icon name="user" weight="thin" size="lg" title="Thin"></go-icon>
+        <go-icon name="user" weight="light" size="lg" title="Light"></go-icon>
+        <go-icon name="user" weight="regular" size="lg" title="Regular"></go-icon>
+        <go-icon name="user" weight="bold" size="lg" title="Bold"></go-icon>
+        <go-icon name="user" weight="fill" size="lg" title="Fill"></go-icon>
+        <go-icon name="user" weight="duotone" size="lg" title="Duotone"></go-icon>
+    </div>
+
+    <!-- API Documentation -->
+    <h2>API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>question</td>
+                <td>Icon name (e.g., 'heart', 'user', 'arrow-right')</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>string</td>
+                <td>md</td>
+                <td>Size: 'sm', 'md', 'lg', 'xl', 'xxl' or CSS value</td>
+            </tr>
+            <tr>
+                <td>weight</td>
+                <td>string</td>
+                <td>regular</td>
+                <td>Weight: 'thin', 'light', 'regular', 'bold', 'fill', 'duotone'</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>See all available icons at <a href="https://phosphoricons.com" target="_blank">phosphoricons.com</a>.</p>
+</div>
+{{end}}

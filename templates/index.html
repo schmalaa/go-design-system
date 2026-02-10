@@ -8,10 +8,17 @@
         </p>
         <div class="hero-actions">
             <a href="/components">
-                <go-button variant="primary">Browse Components</go-button>
+                <go-button variant="primary">
+                    Browse Components
+                    <go-icon name="arrow-right" weight="bold"
+                        style="margin-left: 8px; vertical-align: middle;"></go-icon>
+                </go-button>
             </a>
             <a href="https://github.com/schmalaa/go-design-system" target="_blank">
-                <go-button variant="secondary">View Source</go-button>
+                <go-button variant="secondary">
+                    View Source
+                    <go-icon name="github-logo" style="margin-left: 8px; vertical-align: middle;"></go-icon>
+                </go-button>
             </a>
         </div>
     </div>
@@ -20,15 +27,21 @@
 <div class="container">
     <div class="features-grid">
         <go-card class="feature-card">
-            <h3>⚡ Lightweight</h3>
+            <h3><go-icon name="lightning" weight="duotone" size="lg"
+                    style="color: var(--primary-color); vertical-align: middle; margin-right: 8px;"></go-icon>
+                Lightweight</h3>
             <p>Zero dependencies. Just Vanilla JS and CSS. Keeps your bundle size tiny and your app fast.</p>
         </go-card>
         <go-card class="feature-card">
-            <h3>🔒 Encapsulated</h3>
+            <h3><go-icon name="lock-key" weight="duotone" size="lg"
+                    style="color: var(--primary-color); vertical-align: middle; margin-right: 8px;"></go-icon>
+                Encapsulated</h3>
             <p>Built with Shadow DOM to ensure styles are scoped to the component and never leak out.</p>
         </go-card>
         <go-card class="feature-card">
-            <h3>🐹 Go Ready</h3>
+            <h3><go-icon name="terminal-window" weight="duotone" size="lg"
+                    style="color: var(--primary-color); vertical-align: middle; margin-right: 8px;"></go-icon> Go Ready
+            </h3>
             <p>Seamless integration with `html/template`. Pass data from your Go backend directly to components.</p>
         </go-card>
     </div>

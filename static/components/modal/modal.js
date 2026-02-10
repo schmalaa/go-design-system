@@ -26,7 +26,7 @@ class GoModal extends HTMLElement {
       <div class="modal">
         <div class="modal-header">
            <slot name="header"></slot>
-           <button class="close-btn">&times;</button>
+           <button class="close-btn"><go-icon name="x" size="md" weight="bold"></go-icon></button>
         </div>
         <div class="modal-body">
             <slot></slot>

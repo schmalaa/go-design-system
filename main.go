@@ -19,6 +19,7 @@ func main() {
 	type MenuItem struct {
 		Label string
 		Path  string
+		Icon  string
 	}
 
 	type PageData struct {
@@ -33,13 +34,14 @@ func main() {
 		var contentPath string
 
 		menuItems := []MenuItem{
-			{Label: "Alert", Path: "/components/alert"},
-			{Label: "Avatar", Path: "/components/avatar"},
-			{Label: "Badge", Path: "/components/badge"},
-			{Label: "Button", Path: "/components/button"},
-			{Label: "Card", Path: "/components/card"},
-			{Label: "Input", Path: "/components/input"},
-			{Label: "Modal", Path: "/components/modal"},
+			{Label: "Alert", Path: "/components/alert", Icon: "warning-circle"},
+			{Label: "Avatar", Path: "/components/avatar", Icon: "user-circle"},
+			{Label: "Badge", Path: "/components/badge", Icon: "tag"},
+			{Label: "Button", Path: "/components/button", Icon: "hand-pointing"},
+			{Label: "Card", Path: "/components/card", Icon: "cards"},
+			{Label: "Icon", Path: "/components/icon", Icon: "star"},
+			{Label: "Input", Path: "/components/input", Icon: "textbox"},
+			{Label: "Modal", Path: "/components/modal", Icon: "browsers"},
 		}
 
 		data := PageData{

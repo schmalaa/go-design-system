@@ -14,6 +14,8 @@
     <script type="module" src="/static/components/alert/alert.js"></script>
     <script type="module" src="/static/components/avatar/avatar.js"></script>
     <script type="module" src="/static/components/modal/modal.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="/static/components/icon/icon.js"></script>
     <script type="module" src="/static/components/theme-toggle/theme-toggle.js"></script>
     <script>
         // Prevent FOUC
@@ -25,14 +27,20 @@
 <body>
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="/" style="text-decoration: none; color: inherit;">
-                <h1>Go-DS</h1>
+            <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+                <go-icon name="hexagon" weight="duotone" size="32px" style="color: var(--primary-color);"></go-icon>
+                <div style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">
+                    Go<span style="color: var(--primary-color);">DS</span>
+                </div>
             </a>
             <nav style="display: flex; align-items: center; gap: 20px;">
                 <a href="/" style="text-decoration: none; color: inherit; font-weight: bold;">Home</a>
                 <a href="/components" style="text-decoration: none; color: inherit; font-weight: bold;">Components</a>
                 <a href="https://github.com/schmalaa/go-design-system"
-                    style="text-decoration: none; color: inherit;">GitHub</a>
+                    style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 6px;">
+                    <go-icon name="github-logo" size="lg"></go-icon>
+                    GitHub
+                </a>
                 <go-theme-toggle></go-theme-toggle>
             </nav>
         </div>
@@ -48,7 +56,11 @@
                 {{$currentPath := .ActivePath}}
                 {{range .MenuItems}}
                 <li>
-                    <a href="{{.Path}}" class="{{if eq $currentPath .Path}}active{{end}}">{{.Label}}</a>
+                    <a href="{{.Path}}" class="{{if eq $currentPath .Path}}active{{end}}">
+                        <go-icon name="{{.Icon}}" size="lg"
+                            style="margin-right: 8px; vertical-align: middle;"></go-icon>
+                        {{.Label}}
+                    </a>
                 </li>
                 {{end}}
             </ul>
