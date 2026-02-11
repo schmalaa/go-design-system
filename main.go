@@ -1,18 +1,48 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"time"
 )
 
 func main() {
 	// Serve static files
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
+	// API Endpoints
+	http.HandleFunc("/api/stats", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/event-stream")
+		w.Header().Set("Cache-Control", "no-cache")
+		w.Header().Set("Connection", "keep-alive")
+
+		ticker := time.NewTicker(1 * time.Second)
+		defer ticker.Stop()
+
+		for {
+			select {
+			case <-r.Context().Done():
+				return
+			case <-ticker.C:
+				stats, err := GetSystemStats()
+				if err != nil {
+					continue
+				}
+				jsonData, err := json.Marshal(stats)
+				if err != nil {
+					continue
+				}
+				fmt.Fprintf(w, "data: %s\n\n", jsonData)
+				w.(http.Flusher).Flush()
+			}
+		}
+	})
 
 	// Serve templates
 	// PageData structure for template context
